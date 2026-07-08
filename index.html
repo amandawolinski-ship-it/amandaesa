@@ -1,74 +1,609 @@
+
+<!-- ========================================================= -->
+<!--                SITE POKÉMON - PARTE 1                     -->
+<!-- ========================================================= -->
+
+<!--
 <!DOCTYPE html>
-<html lang="pt-br">
+
+Esta linha informa ao navegador que este arquivo
+é um documento HTML5.
+
+Ela sempre deve ser a primeira linha do arquivo.
+-->
+
+<!DOCTYPE html>
+
+<!--
+A tag <html> indica o início do documento.
+
+lang="pt-BR" informa que o idioma do site é
+Português do Brasil.
+-->
+
+<html lang="pt-BR">
+
 <head>
+
+    <!--
+    Define a tabela de caracteres.
+
+    UTF-8 permite utilizar acentos, cedilha,
+    símbolos e emojis sem erros.
+    -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pokemon</title>
-<style>   
 
-header{ background-color:#87CEEB;
-    color:#392F08;
- text-align: center;
-    }
-img{ width: 800px;
- height:500px ;  
-display: block;
-    margin: 0 auto;
+    <!--
+    Faz o site se adaptar corretamente em celulares,
+    tablets e computadores.
+    -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!--
+    Texto que aparece na aba do navegador.
+    -->
+    <title>BulbaSquirtMander - Escolha seu Inicial</title>
+
+    <!--
+    Início do CSS.
+
+    CSS é responsável pela aparência do site.
+
+    Tudo que estiver dentro de <style> altera
+    cores, tamanhos, fontes, espaçamentos e
+    organização da página.
+    -->
+
+<style>
+
+/* ===================================================== */
+/*                      BODY                             */
+/* ===================================================== */
+
+/*
+O body representa toda a página.
+
+Tudo o que aparece para o usuário
+fica dentro dele.
+*/
+
+body{
+
+    /*
+    Cor de fundo.
+
+    Escolhemos um amarelo bem clarinho,
+    lembrando o Pikachu.
+    */
+
+    background-color:#FFF7AE;
+
+    /*
+    Define a fonte utilizada em toda
+    a página.
+    */
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    /*
+    Remove as margens automáticas
+    do navegador.
+    */
+
+    margin:0;
+
+    /*
+    Remove os espaços internos.
+    */
+
+    padding:0;
+}
 
 
+/* ===================================================== */
+/*                     HEADER                            */
+/* ===================================================== */
 
+/*
+O Header é o cabeçalho do site.
 
+Normalmente contém título,
+subtítulo e imagem principal.
+*/
+
+header{
+
+    background-color:#FFD93D;
+
+    color:#3D2B00;
+
+    text-align:center;
+
+    padding:30px;
+
+    border-bottom:5px solid #E6B800;
 
 }
 
 
+/* ===================================================== */
+/*                      H1                               */
+/* ===================================================== */
+
+/*
+O H1 é o principal título
+da página.
+*/
+
+h1{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===================================================== */
+/*                      H2                               */
+/* ===================================================== */
+
+/*
+O H2 é um subtítulo.
+
+Serve para complementar
+o H1.
+*/
+
+h2{
+
+    font-size:24px;
+
+    font-weight:normal;
+
+}
+
+
+/* ===================================================== */
+/*                      MAIN                             */
+/* ===================================================== */
+
+/*
+O Main representa o conteúdo
+principal do site.
+*/
+
+main{
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:30px auto;
+
+}
+
+
+/* ===================================================== */
+/*                     IMAGEM                            */
+/* ===================================================== */
+
+/*
+Todas as imagens terão
+essas configurações.
+*/
+
+img{
+
+    width:100%;
+
+    max-width:700px;
+
+    display:block;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+    box-shadow:0 0 15px gray;
+
+}
+
+
+/* ===================================================== */
+/*                    SECTION                            */
+/* ===================================================== */
+
+/*
+Cada Pokémon ficará dentro
+de uma Section.
+
+Ela funciona como uma
+caixa de conteúdo.
+*/
+
+section{
+
+    background-color:white;
+
+    margin-bottom:25px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 10px lightgray;
+
+}
+
+
+/* ===================================================== */
+/*                   TÍTULOS H3                          */
+/* ===================================================== */
+
+/*
+Cada Pokémon terá um H3.
+
+Exemplo:
+Bulbasaur
+Charmander
+Squirtle
+*/
+
+h3{
+
+    color:#005B2A;
+
+    text-align:center;
+
+    font-size:28px;
+
+}
+
+
+/* ===================================================== */
+/*                   PARÁGRAFOS                          */
+/* ===================================================== */
+
+/*
+Configura todos os textos.
+*/
+
+p{
+
+    text-align:justify;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+
+/* ===================================================== */
+/*                     RODAPÉ                            */
+/* ===================================================== */
+
+/*
+Estas configurações serão usadas
+na Parte 3.
+
+Pode deixar prontas.
+*/
+
+footer{
+
+    background-color:#FFD93D;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:40px;
+
+    color:#3D2B00;
+
+}
+
 </style>
-
-
-
 
 </head>
 
 <body>
+
+<!-- ===================================================== -->
+<!--                CABEÇALHO DO SITE                      -->
+<!-- ===================================================== -->
+
 <header>
-     <h1> BulbaSquirtMander  </h1>
-    <h2> Escolha Difícil</h2>
- 
+
+    <!--
+    Título principal do site.
+    -->
+
+    <h1>🌟 Escolha seu Pokémon Inicial 🌟</h1>
+
+    <!--
+    Pequena frase abaixo do título.
+    -->
+
+    <h2>Qual será o companheiro da sua aventura?</h2>
+
 </header>
-    <main>
-         <img src="BOLAMON.png" alt="titulo principal"> 
-         
-<p> Na primeira geração de Pokémon, os treinadores iniciam sua jornada escolhendo um entre três Pokémon especiais: Bulbasaur, Charmander e Squirtle. 
-Cada um representa um tipo diferente: Planta, Fogo e Água. 
-E possui características próprias que influenciam o estilo de batalha e a aventura do jogador. 
-Essa escolha é um dos momentos mais marcantes dos jogos, pois o Pokémon inicial acompanha o treinador durante grande parte de sua jornada.
 
-      </p>
+<!-- ===================================================== -->
+<!--         INÍCIO DO CONTEÚDO PRINCIPAL                 -->
+<!-- ===================================================== -->
 
-    <p>Bulbasaur é um Pokémon do tipo Planta e Veneno.
- Ele possui uma semente em suas costas que cresce à medida que ele evolui.
-É conhecido por ser um Pokémon calmo, resistente e fácil de treinar para quem está começando.
- Seus golpes de planta são muito eficientes contra Pokémon dos tipos Água, Terra e Pedra. Ao evoluir, Bulbasaur torna-se Ivysaur e, depois, Venusaur.
+<main>
+
+<!--
+A Parte 2 começará exatamente aqui.
+
+Ela terá:
+✔️ imagem principal
+✔️ seção do Bulbasaur
+✔️ seção do Charmander
+✔️ seção do Squirtle
+-->
+<!-- ===================================================== -->
+<!--                SITE POKÉMON - PARTE 2                 -->
+<!-- ===================================================== -->
+
+<!--
+Esta é a imagem principal do site.
+
+src = nome da imagem que está na mesma pasta do HTML.
+
+alt = texto alternativo caso a imagem não carregue.
+-->
+
+<img src="BOLAMON.png" alt="Pokémon Iniciais">
+
+
+<!-- ===================================================== -->
+<!--                PRIMEIRO CARD                         -->
+<!--                  BULBASAUR                           -->
+<!-- ===================================================== -->
+
+<!--
+A tag <section> cria uma seção independente
+dentro da página.
+
+Neste caso ela será o cartão do Bulbasaur.
+-->
+
+<section>
+
+    <!-- Nome do Pokémon -->
+
+    <h3>🌱 Bulbasaur</h3>
+
+    <!--
+    Primeiro parágrafo.
+
+    Explica quem é o Bulbasaur.
+    -->
+
+    <p>
+
+        Bulbasaur é um Pokémon dos tipos
+        Planta e Veneno.
+        Desde pequeno ele possui uma semente
+        em suas costas que cresce conforme
+        ele evolui.
+
+        É conhecido por ser calmo,
+        resistente e uma ótima escolha para
+        quem está começando sua aventura Pokémon.
+
     </p>
 
-    <p>Charmander é um Pokémon do tipo Fogo.
- Sua característica mais marcante é a chama que fica na ponta de sua cauda, representando sua energia e vitalidade.
- É um Pokémon corajoso e determinado, especializado em ataques de fogo que causam grande dano.
- Durante sua evolução, transforma-se em Charmeleon e, por fim, em Charizard, um dos Pokémon mais populares de toda a franquia.
+    <!-- Segundo parágrafo -->
+
+    <p>
+
+        Seus golpes do tipo Planta são muito
+        eficientes contra Pokémon dos tipos
+        Água, Terra e Pedra.
+
+        Quando ganha experiência,
+        Bulbasaur evolui para Ivysaur
+        e depois para o poderoso Venusaur.
+
     </p>
 
-<p>Squirtle é um Pokémon do tipo Água.
-Ele possui um casco resistente que serve tanto para proteção quanto para aumentar a força de seus movimentos.
- É um Pokémon inteligente, equilibrado e conhecido por utilizar jatos de água em batalha.
-Com o tempo, evolui para Wartortle e depois para Blastoise, que conta com poderosos canhões de água em seu casco.
-</p>
-
-    </main>
-    
+</section>
 
 
 
+<!-- ===================================================== -->
+<!--                SEGUNDO CARD                          -->
+<!--                 CHARMANDER                           -->
+<!-- ===================================================== -->
 
+<section>
+
+    <h3>🔥 Charmander</h3>
+
+    <p>
+
+        Charmander é um Pokémon do tipo Fogo.
+
+        Sua característica mais famosa é
+        a chama na ponta de sua cauda,
+        que representa sua energia e sua força.
+
+        Ele é muito corajoso e gosta de enfrentar
+        grandes desafios.
+
+    </p>
+
+    <p>
+
+        Seus ataques de fogo causam bastante dano
+        durante as batalhas.
+
+        Conforme evolui,
+        transforma-se em Charmeleon
+        e depois em Charizard,
+        um dos Pokémon mais conhecidos
+        de toda a franquia.
+
+    </p>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!--                TERCEIRO CARD                         -->
+<!--                   SQUIRTLE                           -->
+<!-- ===================================================== -->
+
+<section>
+
+    <h3>💧 Squirtle</h3>
+
+    <p>
+
+        Squirtle é um Pokémon do tipo Água.
+
+        Seu casco resistente serve para protegê-lo
+        dos ataques e também ajuda
+        em sua defesa durante as batalhas.
+
+        É um Pokémon inteligente,
+        equilibrado e muito companheiro.
+
+    </p>
+
+    <p>
+
+        Seus poderosos jatos de água conseguem
+        derrotar diversos adversários.
+
+        Com o passar do tempo,
+        Squirtle evolui para Wartortle
+        e depois para Blastoise,
+        que possui grandes canhões de água
+        em seu casco.
+
+    </p>
+
+</section>
+
+<!--
+A Parte 3 começará logo abaixo desta linha.
+
+Ela conterá:
+
+✔️ Uma mensagem final.
+✔️ O rodapé do site.
+✔️ O fechamento das tags <main>, <body> e <html>.
+-->
+<!-- ===================================================== -->
+<!--                SITE POKÉMON - PARTE 3                 -->
+<!-- ===================================================== -->
+
+
+<!--
+Esta última seção serve como uma conclusão
+do site.
+
+Ela encerra o assunto e deixa a página
+mais completa.
+-->
+
+<section>
+
+    <h3>⭐ Qual é o seu favorito?</h3>
+
+    <p>
+
+        Os três Pokémon iniciais da região de Kanto
+        são muito especiais e cada um possui
+        características únicas.
+
+        Bulbasaur representa a natureza,
+        Charmander simboliza coragem
+        e Squirtle demonstra inteligência
+        e determinação.
+
+    </p>
+
+    <p>
+
+        Independentemente da escolha,
+        todos podem se tornar grandes parceiros
+        durante a aventura Pokémon.
+
+        Agora fica a pergunta:
+        qual deles você escolheria para começar
+        sua jornada?
+
+    </p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!--                  FIM DO CONTEÚDO                      -->
+<!-- ===================================================== -->
+
+<!--
+Fechamos a tag <main>.
+
+Tudo que faz parte do conteúdo principal
+do site fica dentro dela.
+-->
+
+</main>
+
+
+<!-- ===================================================== -->
+<!--                      RODAPÉ                           -->
+<!-- ===================================================== -->
+
+<!--
+O rodapé normalmente contém informações finais
+sobre a página.
+
+Neste caso colocamos uma pequena mensagem.
+-->
+
+<footer>
+
+    <p>
+        Site desenvolvido para atividade escolar sobre Pokémon.
+    </p>
+
+    <p>
+        HTML e CSS • 2026
+    </p>
+
+</footer>
+
+
+<!-- ===================================================== -->
+<!--            FECHAMENTO DO DOCUMENTO                    -->
+<!-- ===================================================== -->
+
+<!--
+Fechamos o BODY.
+
+Tudo que aparece na tela fica dentro
+desta tag.
+-->
 
 </body>
+
+<!--
+Fechamos o HTML.
+
+Esta é sempre a última linha
+do documento.
+-->
+
 </html>
