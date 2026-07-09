@@ -10,8 +10,31 @@ header,footer{background:#FFD93D;text-align:center;padding:20px}
 main{max-width:1100px;margin:auto;padding:20px}
 section{background:#fff;border-radius:18px;padding:20px;box-shadow:0 0 10px #ccc;margin:20px 0}
 h3{text-align:center}
-.galeria{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.galeria img{width:220px;height:150px;object-fit:cover;border-radius:10px}
+/* Galeria de imagens */
+.galeria{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;          /* Espaçamento maior entre as imagens */
+    margin-top:20px;
+}
+
+/* Imagens da galeria */
+.galeria img{
+    width:280px;       /* Imagens maiores */
+    max-width:100%;
+    height:auto;       /* Mantém a proporção da imagem */
+    object-fit:contain;/* Não corta a imagem */
+    border-radius:15px;
+    box-shadow:0 5px 12px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+/* Efeito ao passar o mouse */
+.galeria img:hover{
+    transform:scale(1.05);
+}
 hr{border:none;height:2px;background:#ddd}
 .carrossel{display:flex;overflow-x:auto;gap:15px;scroll-behavior:smooth}
 .video{min-width:340px;background:#fff;padding:10px;border-radius:12px;box-shadow:0 0 8px #ccc}
