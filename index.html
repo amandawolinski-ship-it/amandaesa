@@ -1,144 +1,805 @@
 <!DOCTYPE html>
+<!--
+=========================================================
+    PROJETO: BulbaSquirtMander
+    PARTE 1
+=========================================================
+
+Esta parte contém:
+
+✔️ Estrutura principal do HTML
+✔️ Configuração da página
+✔️ Todo o CSS principal
+✔️ Cabeçalho
+✔️ Início da área principal
+
+Nas próximas partes serão adicionadas:
+Parte 2 → Bulbasaur
+Parte 3 → Charmander e Squirtle
+Parte 4 → Vídeos, JavaScript e finalização
+-->
+
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>BulbaSquirtMander</title>
-<style>
-body{font-family:Arial,sans-serif;background:#FFF7AE;margin:0}
-header,footer{background:#FFD93D;text-align:center;padding:20px}
-main{max-width:1100px;margin:auto;padding:20px}
-section{background:#fff;border-radius:18px;padding:20px;box-shadow:0 0 10px #ccc;margin:20px 0}
-h3{text-align:center}
-/* Galeria de imagens */
-.galeria{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:30px;          /* Espaçamento maior entre as imagens */
-    margin-top:20px;
-}
 
-/* Imagens da galeria */
-.galeria img{
-    width:280px;       /* Imagens maiores */
-    max-width:100%;
-    height:auto;       /* Mantém a proporção da imagem */
-    object-fit:contain;/* Não corta a imagem */
-    border-radius:15px;
-    box-shadow:0 5px 12px rgba(0,0,0,.25);
-    transition:.3s;
-}
+    <!-- Define o conjunto de caracteres -->
+    <meta charset="UTF-8">
 
-/* Efeito ao passar o mouse */
-.galeria img:hover{
-    transform:scale(1.05);
-}
-hr{border:none;height:2px;background:#ddd}
-.carrossel{display:flex;overflow-x:auto;gap:15px;scroll-behavior:smooth}
-.video{min-width:340px;background:#fff;padding:10px;border-radius:12px;box-shadow:0 0 8px #ccc}
-iframe{width:100%;height:190px;border:none;border-radius:8px}
-.botoes{text-align:center;margin:15px}
-button{padding:10px 16px;font-size:20px}
-</style>
+    <!-- Faz o site se adaptar ao celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nome mostrado na aba do navegador -->
+    <title>BulbaSquirtMander</title>
+
+    <style>
+
+        /* =====================================================
+                        CONFIGURAÇÕES GERAIS
+        ====================================================== */
+
+        body{
+
+            margin:0;
+
+            font-family:Arial, Helvetica, sans-serif;
+
+            background:#FFF7AE;
+
+            color:#333;
+
+            line-height:1.7;
+
+        }
+
+        /* =====================================================
+                          CABEÇALHO
+        ====================================================== */
+
+        header{
+
+            background:#FFD93D;
+
+            padding:30px;
+
+            text-align:center;
+
+            box-shadow:0 3px 10px rgba(0,0,0,.20);
+
+        }
+
+        header h1{
+
+            margin:0;
+
+            font-size:42px;
+
+        }
+
+        header h2{
+
+            margin-top:10px;
+
+            color:#555;
+
+        }
+
+        /* =====================================================
+                    ÁREA PRINCIPAL DO SITE
+        ====================================================== */
+
+        main{
+
+            max-width:1200px;
+
+            margin:auto;
+
+            padding:25px;
+
+        }
+
+        /* =====================================================
+                     IMAGEM PRINCIPAL
+        ====================================================== */
+
+        .banner{
+
+            display:block;
+
+            width:100%;
+
+            max-width:750px;
+
+            margin:30px auto;
+
+            border-radius:20px;
+
+            box-shadow:0 6px 15px rgba(0,0,0,.25);
+
+        }
+
+        /* =====================================================
+                        CAIXAS DOS POKÉMON
+        ====================================================== */
+
+        section{
+
+            background:white;
+
+            padding:25px;
+
+            margin:35px 0;
+
+            border-radius:18px;
+
+            box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+        }
+
+        section h3{
+
+            text-align:center;
+
+            font-size:30px;
+
+            margin-bottom:20px;
+
+        }
+
+        section p{
+
+            text-align:justify;
+
+            font-size:18px;
+
+        }
+
+        /* =====================================================
+                        GALERIA DE IMAGENS
+
+        ESTA PARTE RESOLVE O PROBLEMA DAS IMAGENS
+        CORTADAS.
+        ====================================================== */
+
+        .galeria{
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            flex-wrap:wrap;
+
+            gap:30px;
+
+            margin-top:25px;
+
+        }
+
+        .galeria img{
+
+            width:280px;
+
+            max-width:100%;
+
+            height:auto;
+
+            object-fit:contain;
+
+            border-radius:15px;
+
+            box-shadow:0 5px 12px rgba(0,0,0,.20);
+
+            transition:0.3s;
+
+        }
+
+        .galeria img:hover{
+
+            transform:scale(1.05);
+
+        }
+
+        /* =====================================================
+                     LINHA SEPARADORA
+        ====================================================== */
+
+        hr{
+
+            border:none;
+
+            height:2px;
+
+            background:#ddd;
+
+            margin:45px 0;
+
+        }
+
+        /* =====================================================
+                    CARROSSEL DE VÍDEOS
+        ====================================================== */
+
+        .carrossel{
+
+            display:flex;
+
+            overflow-x:auto;
+
+            gap:25px;
+
+            scroll-behavior:smooth;
+
+            padding:15px;
+
+        }
+
+        .video{
+
+            min-width:360px;
+
+            background:white;
+
+            border-radius:15px;
+
+            padding:15px;
+
+            box-shadow:0 4px 10px rgba(0,0,0,.18);
+
+        }
+
+        iframe{
+
+            width:100%;
+
+            height:220px;
+
+            border:none;
+
+            border-radius:10px;
+
+        }
+
+        /* =====================================================
+                     BOTÕES DO CARROSSEL
+        ====================================================== */
+
+        .botoes{
+
+            text-align:center;
+
+            margin:20px;
+
+        }
+
+        button{
+
+            padding:12px 18px;
+
+            font-size:22px;
+
+            margin:5px;
+
+            cursor:pointer;
+
+            border:none;
+
+            border-radius:10px;
+
+            background:#FFD93D;
+
+            transition:.3s;
+
+        }
+
+        button:hover{
+
+            background:#FFC300;
+
+            transform:scale(1.08);
+
+        }
+
+        /* =====================================================
+                           RODAPÉ
+        ====================================================== */
+
+        footer{
+
+            background:#FFD93D;
+
+            text-align:center;
+
+            padding:25px;
+
+            font-size:20px;
+
+            margin-top:40px;
+
+        }
+
+        /* =====================================================
+                    RESPONSIVIDADE
+
+        Ajusta automaticamente para celulares.
+        ====================================================== */
+
+        @media(max-width:768px){
+
+            header h1{
+
+                font-size:30px;
+
+            }
+
+            section h3{
+
+                font-size:24px;
+
+            }
+
+            section p{
+
+                font-size:16px;
+
+            }
+
+            .galeria img{
+
+                width:100%;
+
+                max-width:340px;
+
+            }
+
+            .video{
+
+                min-width:300px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-<header><h1>🌟 BulbaSquirtMander 🌟</h1><h2>Uma escolha difícil!</h2></header>
-<main>
-<img src="BOLAMON.png" alt="Pokémon" style="display:block;margin:auto;max-width:700px;width:100%;border-radius:15px;">
-<section>
-<h3>🌱 BULBASAUR 🌱</h3>
-<p> Bulbasaur é um Pokémon dos tipos
-        Planta e Veneno.
-        Desde pequeno ele possui uma semente
-        em suas costas que cresce conforme
-        ele evolui.
 
-        É conhecido por ser calmo,
-        resistente e uma ótima escolha para
-        quem está começando sua aventura Pokémon.</p>
-<p> Seus golpes do tipo Planta são muito
-        eficientes contra Pokémon dos tipos
-        Água, Terra e Pedra.
+    <!-- ================= CABEÇALHO ================= -->
 
-        Quando ganha experiência,
-        Bulbasaur evolui para Ivysaur
-        e depois para o poderoso Venusaur.
-</p>
-<div class="galeria">
-<img src="b1.jpg"><img src="b2.jpg"><img src="b3.jpg">
-</div>
-</section>
-<hr>
-<section>
-<h3>🔥 CHARMANDER 🔥</h3>
-<p> Charmander é um Pokémon do tipo Fogo.
+    <header>
 
-        Sua característica mais famosa é
-        a chama na ponta de sua cauda,
-        que representa sua energia e sua força.
+        <h1>🌟 BulbaSquirtMander 🌟</h1>
 
-        Ele é muito corajoso e gosta de enfrentar
-        grandes desafios.
-</p>
-<p>Seus ataques de fogo causam bastante dano
-        durante as batalhas.
+        <h2>Uma escolha difícil!</h2>
 
-        Conforme evolui,
-        transforma-se em Charmeleon
-        e depois em Charizard,
-        um dos Pokémon mais conhecidos
-        de toda a franquia.
+    </header>
 
-</p>
-<div class="galeria">
-<img src="c1.jpg"><img src="c2.jpg"><img src="c3.jpg">
-</div>
-</section>
-<hr>
-<section>
-<h3>💧 SQUIRTLE 💧</h3>
-<p>        Squirtle é um Pokémon do tipo Água.
+    <!-- ================= CONTEÚDO ================= -->
 
-        Seu casco resistente serve para protegê-lo
-        dos ataques e também ajuda
-        em sua defesa durante as batalhas.
+    <main>
 
-        É um Pokémon inteligente,
-        equilibrado e muito companheiro.</p>
-<p> Seus poderosos jatos de água conseguem
-        derrotar diversos adversários.
+        <!-- Banner principal -->
 
-        Com o passar do tempo,
-        Squirtle evolui para Wartortle
-        e depois para Blastoise,
-        que possui grandes canhões de água
-        em seu casco.
-</p>
-<div class="galeria">
-<img src="s1.jpg"><img src="s2.jpg"><img src="s3.jpg">
-</div>
-</section>
-<section>
-<h2 style="text-align:center">Vídeos</h2>
-<div class="botoes"><button onclick="mover(-350)">⬅️</button><button onclick="mover(350)">➡️</button></div>
-<div id="car" class="carrossel">
-<div class="video"><h4>Bulbasaur Evolução</h4><iframe src="https://www.youtube.com/embed/cPnhc5cHW_E" allowfullscreen></iframe></div>
-<div class="video"><h4>Bulbasaur habilidades</h4><iframe src="https://www.youtube.com/embed/bFkl4hJtLcg" allowfullscreen></iframe></div>
-<div class="video"><h4>Bulbasaur captura</h4><iframe src="https://www.youtube.com/embed/VoXpmVzxjYw" allowfullscreen></iframe></div>
-<div class="video"><h4>Charmander Evolução</h4><iframe src="https://www.youtube.com/embed/gElh7pYpkpI" allowfullscreen></iframe></div>
-<div class="video"><h4>Charmander habilidades</h4><iframe src="https://www.youtube.com/embed/UuVYByTYjYk" allowfullscreen></iframe></div>
-<div class="video"><h4>Charmander captura</h4><iframe src="https://www.youtube.com/embed/USgeGMP9o" allowfullscreen></iframe></div>
-<div class="video"><h4>Squirtle Evolução</h4><iframe src="https://www.youtube.com/embed/6t7RO2WrsCw" allowfullscreen></iframe></div>
-<div class="video"><h4>Squirtle habilidades</h4><iframe src="https://www.youtube.com/embed/MgxOke4NWfM" allowfullscreen></iframe></div>
-<div class="video"><h4>Squirtle captura</h4><iframe src="https://www.youtube.com/embed/1TlOcjJodHw" allowfullscreen></iframe></div>
+        <img
+            src="BOLAMON.png"
+            alt="Banner Pokémon"
+            class="banner">
 
-</div>
-</section>
-</main>
-<footer>Pokémon</footer>
-<script>
-function mover(x){document.getElementById('car').scrollBy({left:x,behavior:'smooth'});}
-</script>
-</body></html>
+        <!--
+        seção do Bulbasaur.
+        -->
+<!-- ===================================================== -->
+        <!--                SEÇÃO DO BULBASAUR                      -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <!-- Título da seção -->
+            <h3>🌱 BULBASAUR 🌱</h3>
+
+            <!-- Primeiro parágrafo -->
+            <p>
+                Bulbasaur é um Pokémon dos tipos
+                <strong>Planta</strong> e
+                <strong>Veneno</strong>.
+
+                Desde o nascimento ele possui
+                uma pequena semente em suas costas.
+
+                Conforme ganha experiência,
+                essa semente cresce e acumula energia,
+                tornando-se cada vez mais forte.
+
+                É conhecido por ser um Pokémon calmo,
+                inteligente e uma excelente escolha
+                para quem está iniciando sua jornada.
+            </p>
+
+            <!-- Segundo parágrafo -->
+            <p>
+
+                Seus ataques do tipo Planta são muito
+                eficientes contra Pokémon dos tipos
+                Água, Terra e Pedra.
+
+                Ao evoluir, Bulbasaur transforma-se em
+                <strong>Ivysaur</strong>
+                e depois no poderoso
+                <strong>Venusaur</strong>,
+                um dos Pokémon mais fortes
+                da primeira geração.
+
+            </p>
+
+            <!-- ================================================= -->
+            <!-- GALERIA DE IMAGENS                               -->
+            <!-- ================================================= -->
+
+            <div class="galeria">
+
+                <!--
+                Cada imagem utiliza:
+
+                src = nome do arquivo
+
+                alt = descrição da imagem
+                (importante para acessibilidade)
+                -->
+
+                <img
+                    src="b1.jpg"
+                    alt="Bulbasaur sorrindo">
+
+                <img
+                    src="b2.jpg"
+                    alt="Bulbasaur em batalha">
+
+                <img
+                    src="b3.jpg"
+                    alt="Bulbasaur usando ataques">
+
+            </div>
+
+        </section>
+
+        <!-- Linha separadora -->
+        <hr>
+
+        <!--
+        seção do Charmander.
+        -->
+<!-- ===================================================== -->
+        <!--               SEÇÃO DO CHARMANDER                     -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <!-- Título -->
+            <h3>🔥 CHARMANDER 🔥</h3>
+
+            <!-- Primeiro texto -->
+            <p>
+
+                Charmander é um Pokémon do tipo
+                <strong>Fogo</strong>.
+
+                Sua característica mais marcante é
+                a chama localizada na ponta da cauda.
+
+                Essa chama representa sua energia,
+                sua saúde e sua força.
+
+                Charmander é muito corajoso e nunca
+                foge de um grande desafio.
+
+            </p>
+
+            <!-- Segundo texto -->
+            <p>
+
+                Seus ataques de fogo causam bastante
+                dano durante as batalhas.
+
+                Conforme evolui,
+                transforma-se em
+
+                <strong>Charmeleon</strong>
+
+                e posteriormente no poderoso
+
+                <strong>Charizard</strong>,
+
+                um dos Pokémon mais famosos
+                de toda a franquia.
+
+            </p>
+
+            <!-- Galeria de imagens -->
+            <div class="galeria">
+
+                <img
+                    src="c1.jpg"
+                    alt="Charmander sorrindo">
+
+                <img
+                    src="c2.jpg"
+                    alt="Charmander usando fogo">
+
+                <img
+                    src="c3.jpg"
+                    alt="Charmander em batalha">
+
+            </div>
+
+        </section>
+
+        <!-- Linha separadora -->
+
+        <hr>
+
+        <!-- ===================================================== -->
+        <!--                 SEÇÃO DO SQUIRTLE                     -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <!-- Título -->
+
+            <h3>💧 SQUIRTLE 💧</h3>
+
+            <!-- Primeiro texto -->
+
+            <p>
+
+                Squirtle é um Pokémon do tipo
+                <strong>Água</strong>.
+
+                Seu casco resistente serve
+                para protegê-lo dos ataques
+                e também auxilia durante
+                sua defesa nas batalhas.
+
+                É conhecido por ser inteligente,
+                equilibrado e muito companheiro.
+
+            </p>
+
+            <!-- Segundo texto -->
+
+            <p>
+
+                Seus fortes jatos de água conseguem
+                derrotar diversos adversários.
+
+                Ao ganhar experiência,
+
+                evolui para
+
+                <strong>Wartortle</strong>
+
+                e depois para
+
+                <strong>Blastoise</strong>,
+
+                que possui enormes canhões
+                em seu casco.
+
+            </p>
+
+            <!-- Galeria -->
+
+            <div class="galeria">
+
+                <img
+                    src="s1.jpg"
+                    alt="Squirtle sorrindo">
+
+                <img
+                    src="s2.jpg"
+                    alt="Squirtle atacando">
+
+                <img
+                    src="s3.jpg"
+                    alt="Squirtle em batalha">
+
+            </div>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- e encerramento do site. -->
+        <!-- ===================================================== -->
+<!-- ===================================================== -->
+        <!--                 SEÇÃO DE VÍDEOS                       -->
+        <!-- ===================================================== -->
+
+        <section>
+
+            <!-- Título da seção -->
+            <h2 style="text-align:center;">
+                🎥 Vídeos Pokémon
+            </h2>
+
+            <!-- Texto explicativo -->
+            <p style="text-align:center;">
+                Utilize os botões para navegar pelos vídeos.
+            </p>
+
+            <!-- ================================================= -->
+            <!-- BOTÕES DO CARROSSEL                               -->
+            <!-- ================================================= -->
+
+            <div class="botoes">
+
+                <!-- Move os vídeos para a esquerda -->
+                <button onclick="mover(-400)">
+                    ⬅️
+                </button>
+
+                <!-- Move os vídeos para a direita -->
+                <button onclick="mover(400)">
+                    ➡️
+                </button>
+
+            </div>
+
+            <!-- ================================================= -->
+            <!-- CARROSSEL DE VÍDEOS                               -->
+            <!-- ================================================= -->
+
+            <div
+                id="car"
+                class="carrossel">
+
+                <!-- Bulbasaur -->
+
+                <div class="video">
+                    <h4>Bulbasaur - Evolução</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/cPnhc5cHW_E"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Bulbasaur - Habilidades</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/bFkl4hJtLcg"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Bulbasaur - Captura</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/VoXpmVzxjYw"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Charmander -->
+
+                <div class="video">
+                    <h4>Charmander - Evolução</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/gElh7pYpkpI"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Charmander - Habilidades</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/UuVYByTYjYk"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Charmander - Captura</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/USgeGMP9o"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Squirtle -->
+
+                <div class="video">
+                    <h4>Squirtle - Evolução</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/6t7RO2WrsCw"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Squirtle - Habilidades</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/MgxOke4NWfM"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video">
+                    <h4>Squirtle - Captura</h4>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/1TlOcjJodHw"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===================================================== -->
+    <!--                     RODAPÉ                             -->
+    <!-- ===================================================== -->
+
+    <footer>
+
+        <h3>Pokémon</h3>
+
+        <p>
+            Projeto desenvolvido para fins de estudo de HTML, CSS e JavaScript.
+        </p>
+
+        <p>
+            BulbaSquirtMander © 2026
+        </p>
+
+    </footer>
+
+    <!-- ===================================================== -->
+    <!--                  JAVASCRIPT                            -->
+    <!-- ===================================================== -->
+
+    <script>
+
+        /*
+        ===========================================================
+        Função responsável por movimentar o carrossel.
+
+        Quando o usuário clicar na seta,
+        o carrossel será deslocado para o lado.
+
+        Valor negativo = esquerda
+
+        Valor positivo = direita
+        ===========================================================
+        */
+
+        function mover(valor){
+
+            document
+                .getElementById("car")
+                .scrollBy({
+
+                    left: valor,
+
+                    behavior: "smooth"
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
